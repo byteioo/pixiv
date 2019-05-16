@@ -31,10 +31,6 @@ class Rank:
         print ("已获取排行榜数据")
         i=0
         for section in sections:
-            i += 1
-            if i<11:
-                continue
-            print(i)
             a=section.find("a", attrs={'class', 'work'})
             if a == None:
                 continue
@@ -46,6 +42,7 @@ class Rank:
             img_url=self.pixiv.get_Imgs_Url(page_url) #从图片所在页面或者原始大图的url
             if img_url == None:
                 continue
+            print("正在下载"+page_title)
             img_file=self.pixiv.download_Img(img_url,page_url,page_title) #下载原始图片
             if img_file != None:
                 self.imgs.post_file(img_file) #下载成功则上传图片
