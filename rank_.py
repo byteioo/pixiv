@@ -12,7 +12,8 @@ class Rank:
         self.pixiv=Pixiv() #实例化Pixiv
         self.imgs=Imgs()
         self.se=self.pixiv.se #传递se
-        self.pixiv.load_path="D:\备份\pixiv\日推\/"+str(time.strftime('%Y%m%d',time.localtime(time.time()))).replace("2019","19")
+        self.pixiv.load_path="D:\备份\pixiv\日推\/"+str(time.strftime('%Y%m',time.localtime(time.time()))).replace("2019","19")+\
+                             "/"+str(time.strftime('%Y%m%d',time.localtime(time.time()))).replace("2019","19")
         self.rank_url="https://www.pixiv.net/ranking.php?mode=daily&" #排行榜地址
     def get_Rank_List(self):
         html=self.pixiv.get_Html(self.rank_url)

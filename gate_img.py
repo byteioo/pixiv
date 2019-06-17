@@ -10,11 +10,11 @@ class Imgs:
 
     def __init__(self): #sss
         self.headers = {
-            'Referer': 'https://helior.cn',
+            'Referer': 'https://byteio.cn',
             #'Content - Type': 'multipart / form - data;boundary = ----WebKitFormBoundaryYzhjgNULijJxORZz;charset=utf-8"'
         }
         self.user_key=config.gate_user_key
-        self.api_url="https://api.helior.cn/gate/img/api/upload"
+        self.api_url="https://api.byteio.cn/gate/img/api/upload"
         self.localhlst_url="http://localhost:8080/img/api/upload"
 
     def post_file(self,path):
